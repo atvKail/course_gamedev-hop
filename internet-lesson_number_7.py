@@ -39,6 +39,7 @@ def main():
         pygame.K_UP: (0, -10),
         pygame.K_DOWN: (0, 10)
     }
+    controls_if = controls.keys()
     condis = {  # Словарь, чтобы не дать игроку повернуть змейку "в себя", спасает от неприятных случайностей
         pygame.K_DOWN: pygame.K_UP,
         pygame.K_UP: pygame.K_DOWN,
@@ -54,7 +55,8 @@ def main():
                 exit()
             if event.type == pygame.KEYDOWN:
                 if event.key != condis[pressed]:
-                    pressed = event.key
+                    if event.key in controls_if:
+                        pressed = event.key
         player_pos[0] += controls[pressed][0]
         player_pos[1] += controls[pressed][1]
         snake_body.insert(0, list(player_pos))
