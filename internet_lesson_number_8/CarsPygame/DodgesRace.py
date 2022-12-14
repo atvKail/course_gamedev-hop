@@ -54,9 +54,7 @@ def main():
     spawnmoney = []
     controls = {  # контроль перемещений
         pygame.K_RIGHT: "r",
-        pygame.K_LEFT: "l",
-        pygame.K_UP: "u",
-        pygame.K_DOWN: "d"
+        pygame.K_LEFT: "l"
     }
     controls_if = controls.keys()
 
